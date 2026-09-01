@@ -1,4 +1,4 @@
-# Price Watcher
+# Product Tracker
 A self-hosted Discord bot that tracks product prices across multiple retailers (At the moment - eBay, B&Q, Steam), alerts users when prices drop, discounts appear or stock status changes, and maintains historical price data per product.
 
 
