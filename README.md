@@ -2,14 +2,26 @@
 A self-hosted Discord bot that tracks product prices across multiple retailers (At the moment - eBay, B&Q, Steam), alerts users when prices drop, discounts appear or stock status changes, and maintains historical price data per product.
 
 
-# Features
-- scrapes data from user selected products 
-- self configurable alerts (set them by availability, price or percentage changes)
-- historical price data (all time lows,highs, mean, percentage difference) displayed with /stats command
+## Features
+- Scrapes data from user-selected products across multiple retailers, via API integration and browser automation (Playwright, for JS-rendered sites)
+- self configurable alerts - set triggers by availability, price threshold or percentage discount
+- historical price data (all time lows, highs, mean, percentage difference from initial price) displayed with /stats command
+
+
+## Commands
+- `/watch <url>`: start tracking a product
+- `/unwatch <url>`: stop tracking a product
+- `/alert [availability/percentage/price] <url> <trigger>`: setup an alert for a tracked product
+- `/alert remove <url> <target>`: remove an alert for a product, specifying which alert you want to remove
+- `/list`: get a list of all products tracked
+- `/get [availability/price] <url>`: receive data on a product, from its last scrape
+- `/stats`: get stats on a product - showing all time lows, highs, mean and percentage change from intial price
+- `/load`: *(OWNER ONLY)* load a bot module without restarting the bot
+- `/unload`: *(OWNER ONLY)* remove a bot module without restarting the bot
 
 
 
-# Setup
+## Setup
 1. Install [Python 3.14.5](https://www.python.org/downloads/).
 2. Clone this project.
   ```
@@ -42,4 +54,8 @@ python3 -m bot.main
 python3 -m pytest tests # for tests
 ```
 
-# Planned to be added later
+## Roadmap
+- additional retailer support (Argos, Loaded, Amazon, Currys, etc)
+- more resilient scraping solution to stay within retailers rate limit
+- web interface (allows for more interactive features like a price history chart)
+
